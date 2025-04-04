@@ -1,9 +1,13 @@
-# New Hampshire Election Shapefile
+# License
+This data was generated using data from the Redistricting Data Hub.  Any use of this project shall also comply with restrictions on use of data and attribution requirements set forth in the Redistricting Data Hub terms and conditions found at: [https://redistrictingdatahub.org/terms-and-conditions/](https://redistrictingdatahub.org/terms-and-conditions/).
 
-This shapefile was processed by Professor Ellen Veomett and her student Ananya Agarwal.
+Use of this project is further governed by the terms of the [Creative Commons Attribution Noncommercial 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/legalcode.en)
+
+# New Hampshire Json and Shapefile
+
+This shapefile was processed by Professor Ellen Veomett and her student Ananya Agarwal using the corresponding jupyter notebook.  As part of the cleaning process, precincts were nested within counties and small rook adjacencies (under 30.5 m) were changed to queen adjacencies.
 
 # **Sources**
-@author: eveomett AI for Redistricting, USF All data retrieved 06/09/24:
 
 Obtain the following data from Restricting Data Hub
 
@@ -21,82 +25,66 @@ Obtain the following data from Restricting Data Hub
 
 [2016 election data](https://redistrictingdatahub.org/dataset/vest-2016-new-hampshire-precinct-and-election-results/)**:**  VEST 2016 New Hampshire precinct and election results
 
+[2020 County data](https://redistrictingdatahub.org/state/new-hampshire/): from 2020 Census Redistricting Data (P.L. 94-171) Shapefiles
+
 # **Processing**
 
-Demographic data were aggregated from the census block level and precincts were assigned to districts using [MGGG's proration software](https://github.com/mggg/maup). Election data were also prorated onto VTDs from the original precinct shapefile using the `maup` package.
+Data were cleaned and aggregated in the corresponding jupyter notebook using MGGG’s python library [maup](https://github.com/mggg/maup).
 
 ## Metadata
-* `STATE`: State
-* `STATEFP`: State FIPS code
-* `COUNTY`: County name
-* `COUNTYFP`: County FIPS code
-* `Precinct`: Precinct name
-* `PRES12D`: Number of votes for 2012 Democratic presidential candidate
-* `PRES12R`: Number of votes for 2012 Republican presidential candidate
-* `GOV12D`: Number of votes for 2012 Democratic gubernatorial candidate
-* `GOV12R`: Number of votes for 2012 Republican gubernatorial candidate
-*	`USH12D`: Number of votes for 2012 Democratic US House candidate
-*	`USH12R`: Number of votes for 2012 Republican US House candidate
-* `EC12D`: Number of votes for 2012 Democratic executive council candidate
-* `EC12R`: Number of votes for 2012 Republican executive council candidate
-* `GOV14D`: Number of votes for 2014 Democratic gubernatorial candidate
-* `GOV14R`: Number of votes for 2014 Republican gubernatorial candidate
-* `SSEN14D`: Number of votes for 2014 Democratic state senate candidate
-*	`SSEN14R`: Number of votes for 2014 Republican state senate candidate
-* `EC14D`: Number of votes for 2014 Democratic executive council candidate
-* `EC14R`: Number of votes for 2014 Republican executive council candidate
-*	`PRES16D`: Number of votes for 2016 Democratic presidential candidate
-*	`PRES16R`: Number of votes for 2016 Republican presidential candidate
-* `GOV16D`: Number of votes for 2016 Democratic gubernatorial candidate
-* `GOV16R`: Number of votes for 2016 Republican gubernatorial candidate
-*	`SEN16D`: Number of votes for 2016 Democratic senate candidate
-*	`SEN16R`: Number of votes for 2016 Republican senate candidate
-*	`USH16D`: Number of votes for 2016 Democratic US House candidate
-*	`USH16R`: Number of votes for 2016 Republican US House candidate
-* `SSEN16D`: Number of votes for 2016 Democratic state senate candidate
-*	`SSEN16R`: Number of votes for 2016 Republican state senate candidate
-* `GOV18D`: Number of votes for 2018 Democratic gubernatorial candidate
-* `GOV18R`: Number of votes for 2018 Republican gubernatorial candidate
-* `EC20D`: Number of votes for 2020 Democratic executive council candidate
-* `EC20R`: Number of votes for 2020 Republican executive council candidate
-* `GOV20D`: Number of votes for 2020 Democratic gubernatorial candidate
-* `GOV20R`: Number of votes for 2020 Republican gubernatorial candidate
-* `PRES20D`: Number of votes for 2020 Democratic presidential candidate
-*	`PRES20R`: Number of votes for 2020 Republican presidential candidate
-*	`SEN20D`: Number of votes for 2020 Democratic senate candidate
-*	`SEN20R`: Number of votes for 2020 Republican senate candidate
-*	`USH20D`: Number of votes for 2020 Democratic US House candidate
-*	`USH20R`: Number of votes for 2020 Republican US House candidate
-* `SSEN20D`: Number of votes for 2020 Democratic state senate candidate
-*	`SSEN20R`: Number of votes for 2020 Republican state senate candidate
-* `TOTPOP`: Total population from 2010 Decennial Census
-* `NH_WHITE`: White, non-hispanic, population from 2010 Decennial Census
-* `NH_BLACK`: Black, non-hispanic, population from 2010 Decennial Census
-* `NH_AMIN`: American Indian and Alaska Native, non-hispanic, population from 2010 Decennial Census
-* `NH_ASIAN`: Asian, non-hispanic, population from 2010 Decennial Census
-* `NH_NHPI`: Native Hawaiian and Pacific Islander, non-hispanic, population from 2010 Decennial Census
-* `NH_OTHER`: Other race, non-hispanic, population from 2010 Decennial Census
-* `NH_2MORE`: Two or more races, non-hispanic, population from 2010 Decennial Census
-* `HISP`: Hispanic population from 2010 Decennial Census
-* `H_WHITE`: White, hispanic, population from 2010 Decennial Census
-* `H_BLACK`: Black, hispanic, population from 2010 Decennial Census
-* `H_AMIN`: American Indian and Alaska Native, hispanic, population from 2010 Decennial Census
-* `H_ASIAN`: Asian, hispanic, population from 2010 Decennial Census
-* `H_NHPI`: Native Hawaiian and Pacific Islander, hispanic, population from 2010 Decennial Census
-* `H_OTHER`: Other race, hispanic, population from 2010 Decennial Census
-* `H_2MORE`: Two or more races, hispanic, population from 2010 Decennial Census
-* `VAP`: Total voting age population from 2010 Decennial Census
-* `HVAP`: Hispanic voting age population from 2010 Decennial Census
-* `WVAP`: White, non-hispanic, voting age population from 2010 Decennial Census
-* `BVAP`: Black, non-hispanic, voting age population from 2010 Decennial Census
-* `AMINVAP`: American Indian and Alaska Native, non-hispanic, voting age population from 2010 Decennial Census
-* `ASIANVAP`: Asian, non-hispanic, voting age population from 2010 Decennial Census
-* `NHPIVAP`: Native Hawaiian and Pacific Islander, non-hispanic, voting age population from 2010 Decennial Census
-* `OTHERVAP`: Other race, non-hispanic, voting age population from 2010 Decennial Census
-* `2MOREVAP`: Two or more races, non-hispanic, voting age population from 2010 Decennial Census
-* `CD`: Congressional district
-* `HDIST`: State House district
-* `SEND`: State Senate district
+- `STATEFP20`: State FIPS code
+- `COUNTYFP20`: County FIPS code
+- `VTDST20`: Voting tabulation district FIPS code
+- `GEOID20`: VTD FIPS code
+- `NAME20`: Voting tabulation district name
+- `NAMELSAD20`: Census translated legal/statistical area description code and Public Use Microdata Area name
+- `CD`: Congressional district ID in 2021 enacted congressional map
+- `SEND`: State Senate district for 2021 State Senate Adopted Plan
+- `HDIST`: State House district for 2021 State House of Representatives Districts Plan
+- `TOTPOP`: Total population in 2020 Census
+- `NH_WHITE`: White, non-hispanic, population in 2020 Census
+- `NH_BLACK`: Black, non-hispanic, population in 2020 Census
+- `NH_AMIN`: American Indian and Alaska Native, non-hispanic, population in 2020 Census
+- `NH_ASIAN`: Asian, non-hispanic, population in 2020 Census
+- `NH_NHPI`: Native Hawaiian and Pacific Islander, non-hispanic, population in 2020 Census
+- `NH_OTHER`: Other race, non-hispanic, population in 2020 Census
+- `NH_2MORE`: Two or more races, non-hispanic, population in 2020 Census
+- `HISP`: Hispanic population in 2020 Census
+- `H_WHITE`: White, hispanic, population in 2020 Census
+- `H_BLACK`: Black, hispanic, population in 2020 Census
+- `H_AMIN`: American Indian and Alaska Native, hispanic, population in 2020 Census
+- `H_ASIAN`: Asian, hispanic, population in 2020 Census
+- `H_NHPI`: Native Hawaiian and Pacific Islander, hispanic, population in 2020 Census
+- `H_OTHER`: Other race, hispanic, population in 2020 Census
+- `H_2MORE`: Two or more races, hispanic, population in 2020 Census
+- `VAP`: Total voting age population in 2020 Census
+- `HVAP`: Hispanic voting age population in 2020 Census
+- `WVAP`: White, non-hispanic, voting age population in 2020 Census
+- `BVAP`: Black, non-hispanic, voting age population in 2020 Census
+- `AMINVAP`: American Indian and Alaska Native, non-hispanic, voting age population in 2020 Census
+- `ASIANVAP`: Asian, non-hispanic, voting age population in 2020 Census
+- `NHPIVAP`: Native Hawaiian and Pacific Islander, non-hispanic, voting age population in 2020 Census
+- `OTHERVAP`: Other race, non-hispanic, voting age population in 2020 Census
+- `2MOREVAP`: Two or more races, non-hispanic, voting age population in 2020 Census
+- `GOV16D`: Number of votes for 2016 Democratic gubernatorial candidate
+- `GOV16R`: Number of votes for 2016 Republican gubernatorial candidate
+- `GOV16O`: Number of votes for 2016 other party's gubernatorial candidate
+- `GOV18D`: Number of votes for 2018 Democratic gubernatorial candidate
+- `GOV18R`: Number of votes for 2018 Republican gubernatorial candidate
+- `GOV18O`: Number of votes for 2018 other party's gubernatorial candidate
+- `GOV20D`: Number of votes for 2020 Democratic gubernatorial candidate
+- `GOV20R`: Number of votes for 2020 Republican gubernatorial candidate
+- `GOV20O`: Number of votes for 2020 other party's gubernatorial candidate
+- `PRE16D`: Number of votes for 2016 Democratic presidential candidate
+- `PRE16R`: Number of votes for 2016 Republican presidential candidate
+- `PRE16O`: Number of votes for 2016 other party's presidential candidate
+- `PRE20D`: Number of votes for 2020 Democratic presidential candidate
+- `PRE20R`: Number of votes for 2020 Republican presidential candidate
+- `PRE20O`: Number of votes for 2020 other party's presidential candidate
+- `USS16D`: Number of votes for 2016 Democratic senate candidate
+- `USS16R`: Number of votes for 2016 Republican senate candidate
+- `USS16O`: Number of votes for 2016 other party's senate candidate
+- `USS20D`: Number of votes for 2020 Democratic senate candidate
+- `USS20R`: Number of votes for 2020 Republican senate candidate
+- `USS20O`: Number of votes for 2020 other party's senate candidate
 
-## Projection
-This shapefile uses a UTM projection centered on New Hampshire (ESPG: 3437).
